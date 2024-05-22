@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RestrictionRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <description>Restriction rule for Sales users</description>
+    <enforcementType>Restrict</enforcementType>
+    <masterLabel>Restrict Sales Users</masterLabel>
+    <recordFilter>ISPICKVAL(Status, &apos;Draft&apos;)=true</recordFilter>
+    <targetEntity>Contract</targetEntity>
+    <userCriteria>$User.ProfileId=&apos;00e4Q000001ZiIGQA0&apos;</userCriteria>
+    <version>1</version>
+</RestrictionRule>

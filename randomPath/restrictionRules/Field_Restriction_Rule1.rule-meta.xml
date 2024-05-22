@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RestrictionRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <enforcementType>Restrict</enforcementType>
+    <masterLabel>Field Restriction Rule1</masterLabel>
+    <recordFilter>Id=&apos;208409324&apos;</recordFilter>
+    <targetEntity>Task__x</targetEntity>
+    <userCriteria>CASE($User.LocaleSidKey, &apos;en_IN&apos;, 1, 0)=1</userCriteria>
+    <version>1</version>
+</RestrictionRule>
