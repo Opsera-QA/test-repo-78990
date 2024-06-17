@@ -5,7 +5,7 @@ private Integer num;
     @isTest
    public static void helloMethod() {
 
-        System.debug('Change Hello DemoApex11 Basic Pipelinetesting123');
+        System.debug('Change Hello DemoApex11 Basic PipelinetestingBranchProtectionRuleApplied to test-Repo-7899 Repo in Github');
     
 
     }
