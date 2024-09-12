@@ -1,0 +1,119 @@
+name: GitHub Actions CI/CD
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Set random number
+        run: echo "RANDOM_NUMBER=$RANDOM" >> $GITHUB_ENV
+      - name: Print random number
+        run: echo ${{ env.RANDOM_NUMBER }}
+      - name: Print variables
+        run: |
+          echo ${{ secrets.FAIL_STAGE }}
+          echo ${{ secrets.NO_FAIL }}
+      - name: Compile code
+        run: |
+          if [ $(( ${{ env.RANDOM_NUMBER }} % 2 )) -eq 0 ] || [ "${{ secrets.FAIL_STAGE }}" == 'build' ] || [ "${{ secrets.NO_FAIL }}" == 'true' ]; then
+            exit 1
+          fi
+          echo "Compile complete."
+    continue-on-error: true
+
+  unit-test-job:
+    runs-on: ubuntu-latest
+    needs: build-job
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Run unit tests
+        run: |
+          echo "Running unit tests... This will take about 60 seconds."
+          sleep 10
+          echo ${{ secrets.FAIL_STAGE }}
+          echo "Code coverage is 90%"
+
+  lint-test-job:
+    runs-on: ubuntu-latest
+    needs: build-job
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Lint code
+        run: |
+          echo "Linting code... This will take about 10 seconds."
+          sleep 5
+          echo ${{ secrets.FAIL_STAGE }}
+          echo "No lint issues found."
+
+  mock-job-1:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Mock stage 1
+        run: echo "Mock stage 1 Completed"
+
+  dast-job-1:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: DAST stage 1
+        run: |
+          sleep 10
+          echo "DAST stage 1 Completed"
+
+  sast-job-1:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: SAST stage 1
+        run: |
+          sleep 15
+          if [ $(( ${{ env.RANDOM_NUMBER }} % 6 )) -eq 0 ] || [ "${{ secrets.FAIL_STAGE }}" == 'sast' ] || [ "${{ secrets.NO_FAIL }}" == 'true' ]; then
+            exit 1
+          fi
+          echo "SAST stage 1 Completed"
+
+  deploy-e1:
+    runs-on: ubuntu-latest
+    needs: [unit-test-job, lint-test-job]
+    if: github.ref == 'refs/heads/develop'
+    steps:
+      - name: Deploy to dev
+        run: |
+          echo "Deploying application in dev"
+          echo "Application successfully deployed in dev"
+
+  deploy-prod:
+    runs-on: ubuntu-latest
+    needs: [unit-test-job, lint-test-job]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to prod
+        run: |
+          echo "Deploying application to prod..."
+          if [ "${{ secrets.FAIL_STAGE }}" == 'deploy' ]; then
+            exit 1
+          fi
+          echo "Application successfully deployed to prod."
+
+  child-pipeline:
+    runs-on: ubuntu-latest
+    needs: deploy-prod
+    steps:
+      - name: Trigger child pipeline
+        run: |
+          echo "Triggering child pipeline..."
+          # Note: GitHub Actions does not support direct child pipeline triggers. Use a script or an API call if needed.
