@@ -1,0 +1,127 @@
+name: scmgroup1/scmmigration
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref }} == 'develop' || ${{ github.ref }} == 'main'
+    continue-on-error: true
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - run: echo "Compiling the code..."
+    - run: RANDOM_NUMBER=$RANDOM
+    - run: echo $RANDOM_NUMBER
+    - run: echo $FAIL_STAGE
+    - run: echo $NO_FAIL
+    - run: |-
+        if [ $(( RANDOM_NUMBER % 2 )) -eq 0  ] || [ "$FAIL_STAGE" == 'build' ] || [ "$NO_FAIL" == 'true' ] ; then
+          exit 1
+        fi
+    - run: echo "Compile complete."
+  unit-test-job:
+    needs: build-job
+    runs-on: ubuntu-latest
+    if: ${{ github.ref }} == 'develop' || ${{ github.ref }} == 'main'
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - run: echo "Running unit tests... This will take about 60 seconds."
+    - run: sleep 10
+    - run: echo $FAIL_STAGE
+    - run: echo "Code coverage is 90%"
+  lint-test-job:
+    needs: build-job
+    runs-on: ubuntu-latest
+    if: ${{ github.ref }} == 'develop' || ${{ github.ref }} == 'main'
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - run: echo "Linting code... This will take about 10 seconds."
+    - run: sleep 5
+    - run: echo $FAIL_STAGE
+    - run: echo "No lint issues found."
+  mock-job-1:
+    needs:
+    - unit-test-job
+    - lint-test-job
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name }} == 'merge_request_event'
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - run: echo "Mock stage 1 Completed"
+  dast-job-1:
+    needs: mock-job-1
+    runs-on: ubuntu-latest
+    if: ${{ github.ref }} == 'main'
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - run: sleep 10
+    - run: echo "Dast stage 1 Completed"
+  sast-job-1:
+    needs: dast-job-1
+    runs-on: ubuntu-latest
+    if: ${{ github.ref }} == 'main'
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - run: sleep 15
+    - run: |-
+        if [ $RANDOM_NUMBER%6 == 0  ] || [ "$FAIL_STAGE" == 'sast' ] || [ "$NO_FAIL" == 'true' ] ; then
+          exit 1
+        fi
+    - run: echo "Sast stage 1 Completed"
+  deploy-e1:
+    needs: sast-job-1
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - run: echo "Deploying application in dev"
+    - run: echo "Application successfully deployed in dev"
+  deploy-prod:
+    needs: deploy-e1
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - run: echo "Deploying application to prod..."
+    - run: |-
+        if [ "$FAIL_STAGE" == 'deploy' ]; then
+          exit 1
+        fi
+    - run: echo "Application successfully deployed to prod."
+  child-pipeline:
+    needs: deploy-prod
+    runs-on: ubuntu-latest
+    env:
+      FAIL_STAGE: "$FAIL_STAGE"
+      NO_FAIL: "$NO_FAIL"
+    steps:
+    - uses: actions/checkout@v4.1.0
+    - name: Run downstream workflow
+      run: gh workflow run $WORKFLOW_FILE --repo gitlab-suriya/downstream-pipeline
+      env:
+        WORKFLOW_FILE: UPDATE_ME
+        GH_TOKEN: "${{ github.token }}"
