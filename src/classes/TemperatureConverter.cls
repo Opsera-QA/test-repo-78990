@@ -11,13 +11,19 @@ public class TemperatureConverter {
         Decimal fh1 = (cs1* 9/5)+ 32;
         return fh1.setScale(2);
     }
-    //Takes Celsius temp and converts to Kelvin
+    
        public static Decimal CelsiusToKelvin(Decimal cel){
         
         Decimal kel = cel+273.15;
         return kel.setScale(2);
         
     }
+    
+    //Changes made on 18th Sept  
 
+	 public static Decimal MeterToCenti(Decimal mtr){
+        Decimal cm = mtr*100;
+        return cm.setScale(2);
+    }
 
 }
