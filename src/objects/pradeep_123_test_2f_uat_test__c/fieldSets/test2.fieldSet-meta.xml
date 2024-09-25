@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>test2</fullName>
+    <description>test2</description>
+    <label>test2</label>
+</FieldSet>
