@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lookup_Master__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Lookup Master</label>
+    <referenceTo>Lookup_Master__c</referenceTo>
+    <relationshipLabel>ChildObjects</relationshipLabel>
+    <relationshipName>ChildObjects</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
