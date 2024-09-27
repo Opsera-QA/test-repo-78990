@@ -17,13 +17,13 @@ public class CaseTriggerHandler {
             // Example logic to update status and sub-status based on priority change
             if (updatedCase.Priority == 'High' && oldCase.Priority != 'High') {
                 updatedCase.Status = 'Escalated';
-                updatedCase.Sub_Status__c = 'In Progress';
+                //updatedCase.Sub_Status__c = 'In Progress';
             } else if (updatedCase.Priority == 'Low' && oldCase.Priority != 'Low') {
                 updatedCase.Status = 'In Progress';
-                updatedCase.Sub_Status__c = 'Waiting for Customer';
+                //updatedCase.Sub_Status__c = 'Waiting for Customer';
             } else {
                 updatedCase.Status = 'In Progress';
-                updatedCase.Sub_Status__c = 'Under Review';
+                //updatedCase.Sub_Status__c = 'Under Review';
             }
         }
     }
