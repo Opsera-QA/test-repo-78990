@@ -5,7 +5,7 @@ private Integer num;
     @isTest
    public static void helloMethod() {
 
-        System.debug('Change Hello QA Testing Basic Pipeline testing TEST 26/09/2024 test');
+        System.debug('Change Hello QA Testing Basic Pipeline testing PROD 12/07/2024 test');
     
 
     }
