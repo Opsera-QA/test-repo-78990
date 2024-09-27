@@ -6,5 +6,5 @@ trigger CaseTrigger on Case (before insert, before update) {
         if (Trigger.isUpdate) {
             CaseTriggerHandler.updateCaseStatus(Trigger.new, Trigger.oldMap);
         }
-    }
+    } 
 }
