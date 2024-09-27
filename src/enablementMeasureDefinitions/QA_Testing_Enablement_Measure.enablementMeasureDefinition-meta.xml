@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnablementMeasureDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>QA Test Enablement Measure in UAT</description>
+    <developerName>QA_Testing_Enablement_Measure</developerName>
+    <masterLabel>QA Testing Enablement Measure</masterLabel>
+    <sourceMeasureObject>
+        <aggregateFunction>Count</aggregateFunction>
+        <dateFieldApiName>CreatedDate</dateFieldApiName>
+        <displayFieldApiName>Type</displayFieldApiName>
+        <objectApiName>Task</objectApiName>
+        <userFieldApiName>LastModifiedBy.LastModifiedById</userFieldApiName>
+    </sourceMeasureObject>
+    <status>Published</status>
+</EnablementMeasureDefinition>

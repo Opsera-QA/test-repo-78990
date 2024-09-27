@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnablementMeasureDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Test Enablment Measure</description>
+    <developerName>TestOpsera_Enablement_Definition</developerName>
+    <masterLabel>TestOpsera Enablement Definition</masterLabel>
+    <sourceMeasureObject>
+        <aggregateFieldApiName>Amount</aggregateFieldApiName>
+        <aggregateFunction>Average</aggregateFunction>
+        <dateFieldApiName>LastModifiedDate</dateFieldApiName>
+        <displayFieldApiName>Closed_Lost_Reason__c</displayFieldApiName>
+        <objectApiName>Opportunity</objectApiName>
+        <userFieldApiName>Account.LastModifiedById</userFieldApiName>
+    </sourceMeasureObject>
+    <status>Published</status>
+</EnablementMeasureDefinition>

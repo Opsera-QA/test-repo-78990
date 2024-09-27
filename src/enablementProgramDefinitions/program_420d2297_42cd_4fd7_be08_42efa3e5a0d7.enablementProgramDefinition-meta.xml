@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnablementProgramDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Welcome! This program coaches you through building a pipeline like a pro. In this 30-day program, you&apos;ll log 370 activities and add at least $300,000 to your pipeline.</description>
+    <developerName>program_420d2297_42cd_4fd7_be08_42efa3e5a0d7</developerName>
+    <doesAllowSelfEnrollment>false</doesAllowSelfEnrollment>
+    <masterLabel>QA Build a Strong Pipeline</masterLabel>
+    <name>QA Build a Strong Pipeline</name>
+    <sections>
+        <developerName>section_7640a848_c9c0_4998_8cf1_9fe7d302bec0</developerName>
+        <name>Know Our Products</name>
+        <sequenceNumber>2</sequenceNumber>
+        <tasks>
+            <day>1</day>
+            <description>See our product team demonstrate the pipeline strategy demonstrated in this program.</description>
+            <developerName>build_pipeline_task_2</developerName>
+            <name>Watch a Strategy Demo</name>
+            <sequenceNumber>3</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Video</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>2</day>
+            <description>Review our value proposition and learn the target market for this product.</description>
+            <developerName>build_pipeline_task_3</developerName>
+            <name>Read Our Go-To-Market Strategy</name>
+            <sequenceNumber>4</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Document</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>2</day>
+            <description>Get to know product features that you can speak to in your prospecting.</description>
+            <developerName>build_pipeline_task_4</developerName>
+            <name>Read a Feature Sheet</name>
+            <sequenceNumber>5</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Document</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>3</day>
+            <description>Review these talk tracks to take your email outreach and call scripts to the next level.</description>
+            <developerName>build_pipeline_task_5</developerName>
+            <name>Read Product Talk Tracks</name>
+            <sequenceNumber>6</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Document</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>3</day>
+            <description>Accelerate your call skills. Listen to your peers conduct 5 of our top-rated calls.</description>
+            <developerName>build_pipeline_task_6</developerName>
+            <name>Listen to Top-Rated Customer Calls</name>
+            <sequenceNumber>7</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>AudioRecording</taskSubCategory>
+        </tasks>
+    </sections>
+    <sections>
+        <developerName>section_29b90947_ed82_4cbb_8574_041c06f216ad</developerName>
+        <name>Learn How to Build a Pipeline</name>
+        <sequenceNumber>8</sequenceNumber>
+        <tasks>
+            <day>4</day>
+            <description>Review best practices for writing the perfect email pitch.</description>
+            <developerName>recommended_exercise</developerName>
+            <name>Read About Effective Emails</name>
+            <sequenceNumber>9</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Document</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>4</day>
+            <description>Learn basics of cold calling, including the keys to prospecting, call scripting, and connecting with new leads.</description>
+            <developerName>build_pipeline_task_8</developerName>
+            <name>Learn Cold Calling for Sales</name>
+            <sequenceNumber>10</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Trailhead</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>4</day>
+            <description>Learn how strategic prospecting increases your sales pipeline.</description>
+            <developerName>build_pipeline_task_9</developerName>
+            <name>Try Prospecting to Improve Sales</name>
+            <sequenceNumber>11</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Trailhead</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>5</day>
+            <description>Call one of your accounts and log the call using a task. To make sure your call is counted, set the Task Subtype to &quot;Call&quot; or add &quot;Call&quot; to the Subject. Then set the Status to Complete.</description>
+            <developerName>build_pipeline_task_10</developerName>
+            <milestone>
+                <isMilestoneAnOutcome>false</isMilestoneAnOutcome>
+                <milestoneMeasures>
+                    <measureDefinitionDeveloperName>salesforceTemplate_CompletedCalls</measureDefinitionDeveloperName>
+                </milestoneMeasures>
+                <milestoneTarget>1.0</milestoneTarget>
+            </milestone>
+            <name>Log a Call by Day 5</name>
+            <sequenceNumber>12</sequenceNumber>
+            <taskCategory>Milestone</taskCategory>
+            <taskSubCategory>Other</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>8</day>
+            <description>Learn to manage prospects from lead to close in Sales Cloud.</description>
+            <developerName>build_pipeline_task_11</developerName>
+            <name>Get Started with Opportunity Management</name>
+            <sequenceNumber>13</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Trailhead</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>8</day>
+            <description>Create a contact strategy that improves sales.</description>
+            <developerName>build_pipeline_task_12</developerName>
+            <name>Explore This Prospecting Contact Strategy</name>
+            <sequenceNumber>14</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Trailhead</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>8</day>
+            <description>Turn prospects into customers with these proven techniques.</description>
+            <developerName>build_pipeline_task_13</developerName>
+            <name>Discover Strategic Prospecting</name>
+            <sequenceNumber>15</sequenceNumber>
+            <taskCategory>Exercise</taskCategory>
+            <taskSubCategory>Trailhead</taskSubCategory>
+        </tasks>
+    </sections>
+    <sections>
+        <developerName>section_fb131dd8_8733_4c1f_b08b_8956fb672509</developerName>
+        <name>Apply What You Learned</name>
+        <sequenceNumber>16</sequenceNumber>
+        <tasks>
+            <day>15</day>
+            <description>Log your prospecting calls and emails using tasks. To make sure your calls are counted, set the Task Subtype to &quot;Call&quot; or add &quot;Call&quot; to the Subject and then set the Status to Complete. To make sure emails are counted, set the Task Subtype to &quot;Email&quot; and set the Status to Complete.</description>
+            <developerName>build_pipeline_task_14</developerName>
+            <milestone>
+                <isMilestoneAnOutcome>false</isMilestoneAnOutcome>
+                <milestoneMeasures>
+                    <measureDefinitionDeveloperName>salesforceTemplate_CallsEmails</measureDefinitionDeveloperName>
+                </milestoneMeasures>
+                <milestoneTarget>120.0</milestoneTarget>
+            </milestone>
+            <name>Log 120 Activities by Day 15</name>
+            <sequenceNumber>17</sequenceNumber>
+            <taskCategory>Milestone</taskCategory>
+            <taskSubCategory>Other</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>15</day>
+            <description>Schedule a meeting with a prospective customer using our standard sales process.</description>
+            <developerName>build_pipeline_task_15</developerName>
+            <milestone>
+                <isMilestoneAnOutcome>false</isMilestoneAnOutcome>
+            </milestone>
+            <name>Book a Sales Meeting by Day 15</name>
+            <sequenceNumber>18</sequenceNumber>
+            <taskCategory>Milestone</taskCategory>
+            <taskSubCategory>Other</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>20</day>
+            <description>Log your prospecting calls and emails using tasks. To make sure your calls are counted, set the Task Subtype to &quot;Call&quot; or add &quot;Call&quot; to the Subject and then set the Status to Complete. To make sure emails are counted, set the Task Subtype to &quot;Email&quot; and set the Status to Complete.</description>
+            <developerName>build_pipeline_task_16</developerName>
+            <milestone>
+                <isMilestoneAnOutcome>false</isMilestoneAnOutcome>
+                <milestoneMeasures>
+                    <measureDefinitionDeveloperName>salesforceTemplate_CallsEmails</measureDefinitionDeveloperName>
+                </milestoneMeasures>
+                <milestoneTarget>245.0</milestoneTarget>
+            </milestone>
+            <name>Log 245 Activities by Day 20</name>
+            <sequenceNumber>19</sequenceNumber>
+            <taskCategory>Milestone</taskCategory>
+            <taskSubCategory>Other</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>20</day>
+            <description>Schedule meetings with prospective customers using our standard sales process.</description>
+            <developerName>program_milestone</developerName>
+            <milestone>
+                <isMilestoneAnOutcome>false</isMilestoneAnOutcome>
+            </milestone>
+            <name>Book 4 Sales Meetings by Day 20</name>
+            <sequenceNumber>20</sequenceNumber>
+            <taskCategory>Milestone</taskCategory>
+            <taskSubCategory>Other</taskSubCategory>
+        </tasks>
+        <tasks>
+            <day>30</day>
+            <description>Log your prospecting calls and emails using tasks. To make sure your calls are counted, set the Task Subtype to &quot;Call&quot; or add &quot;Call&quot; to the Subject and then set the Status to Complete. To make sure emails are counted, set the Task Subtype to &quot;Email&quot; and set the Status to Complete.</description>
+            <developerName>build_pipeline_task_18</developerName>
+            <milestone>
+                <isMilestoneAnOutcome>false</isMilestoneAnOutcome>
+                <milestoneMeasures>
+                    <measureDefinitionDeveloperName>salesforceTemplate_CallsEmails</measureDefinitionDeveloperName>
+                </milestoneMeasures>
+                <milestoneTarget>370.0</milestoneTarget>
+            </milestone>
+            <name>Log 370 Activities by Day 30</name>
+            <sequenceNumber>21</sequenceNumber>
+            <taskCategory>Milestone</taskCategory>
+            <taskSubCategory>Other</taskSubCategory>
+        </tasks>
+    </sections>
+    <tasks>
+        <day>1</day>
+        <description>See how this program can improve your pipeline-building skills.</description>
+        <developerName>build_pipeline_task_1</developerName>
+        <name>Watch a Program Intro</name>
+        <sequenceNumber>1</sequenceNumber>
+        <taskCategory>Exercise</taskCategory>
+        <taskSubCategory>Video</taskSubCategory>
+    </tasks>
+    <tasks>
+        <day>30</day>
+        <description>Track your pipeline generation. Update your opportunities using our standard sales process.</description>
+        <developerName>final_milestone</developerName>
+        <milestone>
+            <isMilestoneAnOutcome>true</isMilestoneAnOutcome>
+            <milestoneTarget>300000.0</milestoneTarget>
+        </milestone>
+        <name>Build a $300,000 Pipeline by Day 30</name>
+        <sequenceNumber>0</sequenceNumber>
+        <taskCategory>Milestone</taskCategory>
+        <taskSubCategory>Other</taskSubCategory>
+    </tasks>
+    <type>Enablement</type>
+</EnablementProgramDefinition>
